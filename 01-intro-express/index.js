@@ -12,7 +12,7 @@ app.use(express.json()) // Le digo a express que voy a usar JSON en TODAS mis pe
 
 // #3 Definir las rutas de mi servidor
 app.get('/', function (req, res) {
-  res.send('Hello World')
+  res.send('Hola Mundo Nodemon!')
 })
 
 // #4 Levantar el servidor, para comenzar a escuchar peticiones en un puerto específico (en este caso el 3000)
