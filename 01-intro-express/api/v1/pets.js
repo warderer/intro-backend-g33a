@@ -28,4 +28,21 @@ router.get('/api/v1/pets', (req, res) => {
     res.json(petList)
 })
 
+/* PARAMS */
+// Un Param es un valor que se envía en la URL de una petición HTTP
+// Ejemplo: /api/v1/pets/1
+// Un param es un valor dinámico.
+
+router.get('/api/v1/pets/:petId', (req, res) => {
+    console.log(req.params)
+    const petId = req.params.petId
+    const pet = petList.pets.find(pet => pet.id == petId)
+    if (pet) {
+        res.json(pet)
+    } else {
+        res.status(404).json({ error: 'Pet not found' })
+    }
+})
+
+
 module.exports = router
