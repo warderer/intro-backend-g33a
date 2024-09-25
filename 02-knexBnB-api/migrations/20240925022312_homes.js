@@ -30,3 +30,15 @@ exports.down = function (knex) {
     }
   })
 }
+
+/* CREAR LA MIGRACIÓN */
+// knex migrate:make nombre_de_la_migracion
+
+/* EJECUTAR UNA MIGRACIÓN */
+// knex migrate:latest // ejecuta la migración
+// knex migrate:up 20240925022312_homes.js // ejecuta una migración en especifico
+
+/* DESHACER UNA MIGRACIÓN */
+// knex migrate:rollback latest // deshace la última migración
+// knex migrate:rollback --all // deshace todas las migraciones
+// knex migrate:rollback 20240925022312_homes.js // deshace una migración en especifico
