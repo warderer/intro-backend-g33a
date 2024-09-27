@@ -17,11 +17,26 @@ const create = (bodyHome) => {
 }
 
 // READ
+const findAll = () => {
+  return knex
+    .select('*')
+    .from('homes')
+    .where('active', true)
+}
+
+const findOne = (houseId) => {
+  return knex
+    .select('*')
+    .from('homes')
+    .where('house_id', houseId)
+}
 
 // UPDATE
 
 // DELETE
 
 module.exports = {
-  create
+  create,
+  findAll,
+  findOne
 }
